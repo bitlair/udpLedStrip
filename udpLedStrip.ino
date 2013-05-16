@@ -75,7 +75,7 @@ void handleMessage(word port, byte ip[4], const char *data, word len)
   dip[3] = 10;
   dport = port;
 
-  ether.sendBufferUdp(len, 1234, dip, dport);
+  //ether.sendBufferUdp(len, 1234, dip, dport);
   // If the message contains only led data write it to the leds
   ether.printIp("Received message from ", ip);
   Serial.print("port=");
@@ -278,7 +278,7 @@ void handleCmd(char *data)
   {
     char *c = (char *) "Received message ...";
     strcpy((char *) &(ether.buffer[UDP_DATA_P]), c);
-    ether.sendBufferUdp(strlen(c) + 1, 1234, dip, dport);
+    //ether.sendBufferUdp(strlen(c) + 1, 1234, dip, dport);
   }
 }
 
